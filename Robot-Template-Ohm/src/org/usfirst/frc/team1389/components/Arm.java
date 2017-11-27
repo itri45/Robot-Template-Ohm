@@ -56,8 +56,10 @@ public class Arm extends Subsystem{
 			intakeVal.set(-0.7);
 		}
 		
+		else
+		{
 			intakeVal.set(0);
-		
+		}
 	}
 
 	@Override
@@ -80,5 +82,6 @@ public class Arm extends Subsystem{
 	public void update() {
 		moveIntakeMotor();
 		mapArmMotor();
+	
 	}
 }

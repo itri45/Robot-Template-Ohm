@@ -10,32 +10,53 @@ import com.team1389.watch.Watchable;
 
 public class Arm extends Subsystem{
 	
-	PercentIn armButton;
+	PercentIn thumbPos;
 	DigitalIn intakeButton;
-	PercentOut talonperout;
-	PercentOut intakeval;
+	PercentOut armAxis;
+	PercentOut intakeVal;
 	
-	public Arm(PercentIn armButton, DigitalIn intakeButton, PercentOut talonperout, PercentOut intakeval)
+	/**
+	 * Moves the arm of a robot and allow the arm to intake gears
+	 * 
+	 * @param thumbPos
+	 * 			The percent position of the thumbstick of the controller
+	 * @param intakeButton
+	 * 			The button that controls the intake motor
+	 * @param armAxis
+	 * 			The position of the arm
+	 * @param intakeVal
+	 * 			Percent value of intake motor
+	 */
+	
+	public Arm(PercentIn thumbPos, DigitalIn intakeButton, PercentOut armAxis, PercentOut intakeVal)
 	{
-		this.armButton = armButton;
+		this.thumbPos = thumbPos;
 		this.intakeButton = intakeButton;
-		this.talonperout = talonperout;
-		this.intakeval = intakeval;
+		this.armAxis = armAxis;
+		this.intakeVal = intakeVal;
 	}
+	
+	/**
+	 * Sets the percent value of arm position to the percent value of the thumbstick position
+	 */
 	
 	public void mapArmMotor()
 	{
-		talonperout.set(armButton.get());
+		armAxis.set(thumbPos.get());
 	}
 	
+	/**
+	 * Moves the intake motor if a button is pressed 
+	 */
 	
 	public void moveIntakeMotor()
 	{
 		if (intakeButton.get())
-			intakeval.set(0.5);
+		{
+			intakeVal.set(-0.7);
+		}
 		
-		else
-			intakeval.set(0);
+			intakeVal.set(0);
 		
 	}
 

@@ -32,5 +32,5 @@ public class RobotLayout extends RobotMap {
 
 	public SwitchHardware topSwitch;
 	public SwitchHardware bottomSwitch;
-
+	public CANTalonHardware armMotor;
 }

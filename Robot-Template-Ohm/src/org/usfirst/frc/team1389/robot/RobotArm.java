@@ -1,12 +1,35 @@
 package org.usfirst.frc.team1389.robot;
 
-public class RobotArm
+import com.team1389.system.Subsystem;
+import com.team1389.util.list.AddList;
+import com.team1389.watch.Watchable;
+
+public class RobotArm extends Subsystem
 {
-
-	public static void main(String[] args)
+	@Override
+	public AddList<Watchable> getSubWatchables(AddList<Watchable> stem)
 	{
-		// TODO Auto-generated method stub
 
+		return stem;
+	}
+
+	@Override
+	public String getName()
+	{
+
+		return "";
+	}
+
+	@Override
+	public void init()
+	{
+		RobotSoftware();
+	}
+
+	@Override
+	public void update()
+	{
+		
 	}
 
 }

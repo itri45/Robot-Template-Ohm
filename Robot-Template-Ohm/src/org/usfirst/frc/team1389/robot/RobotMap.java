@@ -51,4 +51,8 @@ public class RobotMap {
 	protected static final boolean sinv_ELEVATOR_ENCODER = true;
 	protected static final SPIPort spi_GYRO = new SPIPort(SPI.Port.kOnboardCS0);
 
+	//Arm
+	
+	protected static final CAN can_ARM_MOTOR = null;
+	protected static final boolean inv_ARM_MOTOR = true;
 }

@@ -29,6 +29,7 @@ public class RobotHardware extends RobotLayout {
 		gyro = new GyroHardware<>(GyroHardware.ADXRS_450, spi_GYRO, registry);
 		initDriveTrain();
 		initElevator();
+		initArm();
 	}
 
 	private void initElevator() {
@@ -52,6 +53,10 @@ public class RobotHardware extends RobotLayout {
 
 	public Registry getRegistry() {
 		return registry;
+	}
+	
+	private void initArm() {
+		armMotor = new CANTalonHardware(inv_ARM_MOTOR, can_ARM_MOTOR, registry);
 	}
 
 }

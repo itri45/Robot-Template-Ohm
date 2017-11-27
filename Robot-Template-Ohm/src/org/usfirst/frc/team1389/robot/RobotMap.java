@@ -1,11 +1,8 @@
 package org.usfirst.frc.team1389.robot;
 
 import com.team1389.hardware.registry.port_types.CAN;
-import com.team1389.hardware.registry.port_types.DIO;
 import com.team1389.hardware.registry.port_types.PWM;
-import com.team1389.hardware.registry.port_types.SPIPort;
 
-import edu.wpi.first.wpilibj.SPI;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into to a variable name.
@@ -24,31 +21,13 @@ import edu.wpi.first.wpilibj.SPI;
  * <em>sinv_ASSOCIATED_IO_IDENTIFIER</em> for inputs.
  */
 public class RobotMap {
-	//Drivetrain
-	protected static final CAN can_LEFT_MOTOR_A = new CAN(9);
-	protected static final boolean inv_LEFT_MOTOR_A = true;
-	protected static final CAN can_LEFT_MOTOR_B = new CAN(5);
-	protected static final boolean inv_LEFT_MOTOR_B = false;
-	protected static final CAN can_RIGHT_MOTOR_A = new CAN(1);
-	protected static final boolean inv_RIGHT_MOTOR_A = true;
-	protected static final CAN can_RIGHT_MOTOR_B = new CAN(7);
-	protected static final boolean inv_RIGHT_MOTOR_B = true;
 	
-	//Elevator
-	protected static final PWM pwm_ELEVATOR_LEFT = new PWM(8);
-	protected static final PWM pwm_ELEVATOR_RIGHT = new PWM(9);
-	protected static final boolean inv_ELEVATOR_LEFT = false;
-	protected static final boolean inv_ELEVATOR_RIGHT = false;
+	protected static final CAN can_ARM_MOTOR = new CAN(7);
+	protected static final PWM pwm_INTAKE_MOTOR = new PWM (1);
 	
-	//Sensors
-	protected static final DIO dio_TOP_LIMIT = new DIO(0);
-	protected static final DIO dio_BOTTOM_LIMIT = new DIO(1);
-	protected static final boolean inv_TOP_LIMIT = false;
-	protected static final boolean inv_BOTTOM_LIMIT = true;
-
-	protected static final boolean sinv_LEFT_ENCODER = true;
-	protected static final boolean sinv_RIGHT_ENCODER = false;
-	protected static final boolean sinv_ELEVATOR_ENCODER = true;
-	protected static final SPIPort spi_GYRO = new SPIPort(SPI.Port.kOnboardCS0);
+	protected static final boolean inv_ARM_MOTOR = true;
+	protected static final boolean inv_ARM_ENCODER = false;
+	
+	protected static final boolean inv_INTAKE_MOTOR = false;
 
 }

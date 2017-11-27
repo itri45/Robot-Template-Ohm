@@ -1,9 +1,5 @@
 package org.usfirst.frc.team1389.robot;
 
-import com.team1389.hardware.inputs.hardware.GyroHardware;
-import com.team1389.hardware.inputs.hardware.PDPHardware;
-import com.team1389.hardware.inputs.hardware.SwitchHardware;
-import com.team1389.hardware.outputs.hardware.CANTalonGroup;
 import com.team1389.hardware.outputs.hardware.CANTalonHardware;
 import com.team1389.hardware.outputs.hardware.VictorHardware;
 import com.team1389.hardware.registry.Registry;
@@ -24,15 +20,22 @@ public class RobotHardware extends RobotLayout {
 	 */
 	protected RobotHardware() {
 		registry = new Registry();
-		pdp = new PDPHardware(registry);
+	//	pdp = new PDPHardware(registry);
 		System.out.println("initializing hardware");
-		gyro = new GyroHardware<>(GyroHardware.ADXRS_450, spi_GYRO, registry);
-		initDriveTrain();
-		initElevator();
+	//	gyro = new GyroHardware<>(GyroHardware.ADXRS_450, spi_GYRO, registry);
+	//	initDriveTrain();
+	//	initElevator();
+		initArm();
 	}
 
-	private void initElevator() {
-		elevatorA = new VictorHardware(inv_ELEVATOR_LEFT, pwm_ELEVATOR_LEFT, registry);
+	private void initArm()
+	{
+		armtalon = new CANTalonHardware(inv_ARM_MOTOR, inv_ARM_ENCODER, can_ARM_MOTOR, registry);
+		intakeMotor = new VictorHardware(inv_INTAKE_MOTOR, pwm_INTAKE_MOTOR , registry);
+	}
+	
+/*	private void initElevator() {
+		/*elevatorA = new VictorHardware(inv_ELEVATOR_LEFT, pwm_ELEVATOR_LEFT, registry);
 		elevatorB = new VictorHardware(inv_ELEVATOR_RIGHT, pwm_ELEVATOR_RIGHT, registry);
 		topSwitch = new SwitchHardware(inv_TOP_LIMIT, dio_TOP_LIMIT, registry);
 		bottomSwitch = new SwitchHardware(inv_BOTTOM_LIMIT, dio_BOTTOM_LIMIT, registry);
@@ -42,13 +45,13 @@ public class RobotHardware extends RobotLayout {
 	}
 
 	private void initDriveTrain() {
-		leftA = new CANTalonHardware(inv_LEFT_MOTOR_A, sinv_LEFT_ENCODER, can_LEFT_MOTOR_A, registry);
+		/*leftA = new CANTalonHardware(inv_LEFT_MOTOR_A, sinv_LEFT_ENCODER, can_LEFT_MOTOR_A, registry);
 		rightA = new CANTalonHardware(inv_RIGHT_MOTOR_A, sinv_RIGHT_ENCODER, can_RIGHT_MOTOR_A, registry);
 		leftB = new CANTalonHardware(inv_LEFT_MOTOR_B, sinv_ELEVATOR_ENCODER, can_LEFT_MOTOR_B, registry);
 		rightB = new CANTalonHardware(inv_RIGHT_MOTOR_B, can_RIGHT_MOTOR_B, registry);
 		leftGroup = new CANTalonGroup(leftA, leftB);
 		rightGroup = new CANTalonGroup(rightA, rightB);
-	}
+	}*/
 
 	public Registry getRegistry() {
 		return registry;

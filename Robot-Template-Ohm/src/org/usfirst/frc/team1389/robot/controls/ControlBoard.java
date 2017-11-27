@@ -23,20 +23,21 @@ public class ControlBoard extends ControlMap {
 
 	private final JoystickHardware driveController = new JoystickHardware(DRIVE_CONTROLLER);
 	private final JoystickHardware manipController = new JoystickHardware(MANIP_CONTROLLER);
-
+	
 	// DRIVER CONTROLS
 	public PercentIn throttle = driveController.getAxis(ax_THROTTLE_AXIS).applyDeadband(.02);
 	public PercentIn wheel = driveController.getAxis(ax_WHEEL_AXIS).applyDeadband(.02);
-	public DigitalIn quickTurn = driveController.getButton(btn_QUICK_TURN);
-
-	// MANIPULATOR CONTROLS
-	public DigitalIn armButtonA = manipController.getButton(btn_ARM_POSITION_A).latched();
-	public DigitalIn armButtonB = manipController.getButton(btn_ARM_POSITION_B).latched();
-	public DigitalIn armButtonC = manipController.getButton(btn_ARM_POSITION_C).latched();
-	public DigitalIn armButtonD = manipController.getButton(btn_ARM_POSITION_D).latched();
-
+	public DigitalIn quickturn = driveController.getButton(btn_QUICK_TURN);
+	
+	// MANUIPULATOR CONTROLS
+	public DigitalIn armbuttonA = manipController.getButton(btn_ARM_POSITION_A).latched();
+	public DigitalIn armbuttonB = manipController.getButton(btn_ARM_POSITION_B).latched();
+	public DigitalIn armbuttonC = manipController.getButton(btn_ARM_POSITION_C).latched();
+	public DigitalIn armbuttonD = manipController.getButton(btn_ARM_POSITION_D).latched();
+	
 	public DigitalIn turretZero = manipController.getButton(btn_TURRET_ZERO, InputFilter.LATCHED);
 	public PercentIn turretAxis = manipController.getAxis(ax_TURRET_AXIS);
 	public PercentIn intakeAxis = manipController.getAxis(ax_INTAKE_AXIS);
 	public DigitalIn intakeOverride = manipController.getButton(btn_INTAKE_MANUAL_OVERRIDE);
+	
 }

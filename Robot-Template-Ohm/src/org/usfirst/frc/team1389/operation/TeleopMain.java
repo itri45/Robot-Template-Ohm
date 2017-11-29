@@ -14,7 +14,7 @@ public class TeleopMain {
 		
 	private Arm armset()
 	{
-		Arm arm = new Arm (controls.intakeAxis, controls.armbuttonA, robot.armtalon.getVoltageOutput(), robot.intakeMotor.getVoltageOutput());
+		Arm arm = new Arm (controls.intakeAxis, controls.armbuttonA, controls.armbuttonB, robot.armtalon.getVoltageOutput(), robot.intakeMotor.getVoltageOutput());
 		
 		return arm;
 	}

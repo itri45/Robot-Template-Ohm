@@ -28,6 +28,6 @@ public class RobotMap {
 	protected static final boolean inv_ARM_MOTOR = true;
 	protected static final boolean inv_ARM_ENCODER = false;
 	
-	protected static final boolean inv_INTAKE_MOTOR = false;
+	protected static final boolean inv_INTAKE_MOTOR = true;
 
 }

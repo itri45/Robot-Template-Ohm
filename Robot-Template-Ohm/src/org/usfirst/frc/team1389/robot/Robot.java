@@ -6,10 +6,6 @@ import org.usfirst.frc.team1389.watchers.DashboardInput;
 
 import com.team1389.auto.AutoModeBase;
 import com.team1389.auto.AutoModeExecuter;
-import com.team1389.hardware.inputs.hardware.JoystickHardware;
-import com.team1389.hardware.outputs.hardware.CANTalonHardware;
-import com.team1389.hardware.registry.Registry;
-import com.team1389.hardware.registry.port_types.CAN;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 

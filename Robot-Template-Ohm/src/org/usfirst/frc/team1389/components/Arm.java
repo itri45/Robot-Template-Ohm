@@ -12,16 +12,17 @@ public class Arm extends Subsystem{
 	
 	PercentIn thumbPos;
 	DigitalIn intakeButton;
+	DigitalIn outtakeButton;
 	PercentOut armAxis;
 	PercentOut intakeVal;
 	
 	/**
-	 * Moves the arm of a robot and allow the arm to intake gears
+	 * Moves the arm of a robot and allow the arm to take in gears
 	 * 
 	 * @param thumbPos
 	 * 			The percent position of the thumbstick of the controller
 	 * @param intakeButton
-	 * 			The button that controls the intake motor
+	 * 			The button that controls intakes
 	 * @param armAxis
 	 * 			The position of the arm
 	 * @param intakeVal
@@ -32,6 +33,30 @@ public class Arm extends Subsystem{
 	{
 		this.thumbPos = thumbPos;
 		this.intakeButton = intakeButton;
+		this.armAxis = armAxis;
+		this.intakeVal = intakeVal;
+	}
+	
+	/**
+	 * Moves the arm of a robot and allow the arm to take in and spit out gears
+	 * 
+	 * @param thumbPos
+	 * 			The percent position of the thumbstick of the controller
+	 * @param intakeButton
+	 * 			The button that controls intakes
+	 * @param outtakeButton
+	 * 			The button that controls outtakes
+	 * @param armAxis
+	 * 			The position of the arm
+	 * @param intakeVal
+	 * 			Percent value of intake motor
+	 */
+	
+	public Arm(PercentIn thumbPos, DigitalIn intakeButton, DigitalIn outtakeButton, PercentOut armAxis, PercentOut intakeVal)
+	{
+		this.thumbPos = thumbPos;
+		this.intakeButton = intakeButton;
+		this.outtakeButton = outtakeButton;
 		this.armAxis = armAxis;
 		this.intakeVal = intakeVal;
 	}
@@ -52,6 +77,19 @@ public class Arm extends Subsystem{
 	public void moveIntakeMotor()
 	{
 		if (intakeButton.get())
+		{
+			intakeVal.set(0.7);
+		}
+		
+		else
+		{
+			intakeVal.set(0);
+		}
+	}
+	
+	public void moveOuttakeMotor()
+	{
+		if (outtakeButton.get())
 		{
 			intakeVal.set(-0.7);
 		}

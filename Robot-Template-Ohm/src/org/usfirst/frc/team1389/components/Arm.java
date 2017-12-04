@@ -1,7 +1,6 @@
 package org.usfirst.frc.team1389.components;
 
 import com.team1389.hardware.inputs.software.DigitalIn;
-import com.team1389.hardware.inputs.software.PercentIn;
 import com.team1389.hardware.outputs.software.PercentOut;
 import com.team1389.system.Subsystem;
 import com.team1389.util.list.AddList;
@@ -10,53 +9,36 @@ import com.team1389.watch.Watchable;
 
 public class Arm extends Subsystem{
 	
-	PercentIn thumbPos;
 	DigitalIn intakeButton;
 	DigitalIn outtakeButton;
+	DigitalIn moveDown;
+	DigitalIn moveUp;
 	PercentOut armAxis;
 	PercentOut intakeVal;
 	
 	/**
-	 * Moves the arm of a robot and allow the arm to take in gears
-	 * 
-	 * @param thumbPos
-	 * 			The percent position of the thumbstick of the controller
-	 * @param intakeButton
-	 * 			The button that controls intakes
-	 * @param armAxis
-	 * 			The position of the arm
-	 * @param intakeVal
-	 * 			Percent value of intake motor
-	 */
-	
-	public Arm(PercentIn thumbPos, DigitalIn intakeButton, PercentOut armAxis, PercentOut intakeVal)
-	{
-		this.thumbPos = thumbPos;
-		this.intakeButton = intakeButton;
-		this.armAxis = armAxis;
-		this.intakeVal = intakeVal;
-	}
-	
-	/**
 	 * Moves the arm of a robot and allow the arm to take in and spit out gears
 	 * 
-	 * @param thumbPos
-	 * 			The percent position of the thumbstick of the controller
 	 * @param intakeButton
 	 * 			The button that controls intakes
 	 * @param outtakeButton
 	 * 			The button that controls outtakes
+	 * @param moveDown
+	 * 			Button that controls downwards arm movements
+	 * @param moveUp
+	 * 			Button that controls upwards arm movements
 	 * @param armAxis
 	 * 			The position of the arm
 	 * @param intakeVal
 	 * 			Percent value of intake motor
 	 */
 	
-	public Arm(PercentIn thumbPos, DigitalIn intakeButton, DigitalIn outtakeButton, PercentOut armAxis, PercentOut intakeVal)
+	public Arm(DigitalIn intakeButton, DigitalIn outtakeButton, DigitalIn moveDown, DigitalIn moveUp, PercentOut armAxis, PercentOut intakeVal)
 	{
-		this.thumbPos = thumbPos;
 		this.intakeButton = intakeButton;
 		this.outtakeButton = outtakeButton;
+		this.moveDown = moveDown;
+		this.moveUp = moveUp;
 		this.armAxis = armAxis;
 		this.intakeVal = intakeVal;
 	}
@@ -67,7 +49,15 @@ public class Arm extends Subsystem{
 	
 	public void mapArmMotor()
 	{
-		armAxis.set(thumbPos.get());
+			if (moveUp.get())
+			{
+				armAxis.set(0.1);
+			}
+			
+			else if (moveDown.get())
+			{
+				armAxis.set(-0.1);
+			}
 	}
 	
 	/**

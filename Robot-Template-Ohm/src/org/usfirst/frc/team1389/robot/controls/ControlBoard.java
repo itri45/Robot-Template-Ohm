@@ -30,10 +30,10 @@ public class ControlBoard extends ControlMap {
 	public DigitalIn quickturn = driveController.getButton(btn_QUICK_TURN);
 	
 	// MANUIPULATOR CONTROLS
-	public DigitalIn armbuttonA = manipController.getButton(btn_ARM_POSITION_A).latched();
-	public DigitalIn armbuttonB = manipController.getButton(btn_ARM_POSITION_B).latched();
-	public DigitalIn armbuttonC = manipController.getButton(btn_ARM_POSITION_C).latched();
-	public DigitalIn armbuttonD = manipController.getButton(btn_ARM_POSITION_D).latched();
+	public DigitalIn armbuttonA = manipController.getButton(btn_ARM_POSITION_A);
+	public DigitalIn armbuttonB = manipController.getButton(btn_ARM_POSITION_B);
+	public DigitalIn armbuttonC = manipController.getButton(btn_ARM_POSITION_C);
+	public DigitalIn armbuttonD = manipController.getButton(btn_ARM_POSITION_D);
 	
 	public DigitalIn turretZero = manipController.getButton(btn_TURRET_ZERO, InputFilter.LATCHED);
 	public PercentIn turretAxis = manipController.getAxis(ax_TURRET_AXIS);

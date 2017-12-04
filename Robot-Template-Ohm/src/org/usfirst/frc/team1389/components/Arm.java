@@ -58,6 +58,11 @@ public class Arm extends Subsystem{
 			{
 				armAxis.set(-0.5);
 			}
+			
+			else
+			{
+				armAxis.set(0);
+			}
 	}
 	
 	/**
@@ -68,7 +73,7 @@ public class Arm extends Subsystem{
 	{
 		if (intakeButton.get())
 		{
-			intakeVal.set(0.7);
+			intakeVal.set(-0.7);
 		}
 		
 		else
@@ -81,7 +86,7 @@ public class Arm extends Subsystem{
 	{
 		if (outtakeButton.get())
 		{
-			intakeVal.set(-0.7);
+			intakeVal.set(0.7);
 		}
 		
 		else
@@ -109,6 +114,7 @@ public class Arm extends Subsystem{
 	@Override
 	public void update() {
 		moveIntakeMotor();
+		moveOuttakeMotor();
 		mapArmMotor();
 	
 	}

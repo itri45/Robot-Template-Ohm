@@ -51,12 +51,12 @@ public class Arm extends Subsystem{
 	{
 			if (moveUp.get())
 			{
-				armAxis.set(0.1);
+				armAxis.set(0.5);
 			}
 			
 			else if (moveDown.get())
 			{
-				armAxis.set(-0.1);
+				armAxis.set(-0.5);
 			}
 	}
 	

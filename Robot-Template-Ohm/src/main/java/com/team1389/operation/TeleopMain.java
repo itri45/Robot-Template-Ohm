@@ -1,8 +1,7 @@
-package org.usfirst.frc.team1389.operation;
+package com.team1389.operation;
 
-import org.usfirst.frc.team1389.robot.RobotSoftware;
-import org.usfirst.frc.team1389.robot.controls.ControlBoard;
-
+import com.team1389.robot.RobotSoftware;
+import com.team1389.robot.controls.ControlBoard;
 import com.team1389.system.SystemManager;
 
 public class TeleopMain {

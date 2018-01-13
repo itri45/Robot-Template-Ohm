@@ -1,4 +1,4 @@
-package org.usfirst.frc.team1389.autonomous;
+package com.team1389.autonomous;
 
 import com.team1389.auto.AutoModeBase;
 

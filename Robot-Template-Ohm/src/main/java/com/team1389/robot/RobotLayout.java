@@ -1,4 +1,4 @@
-package org.usfirst.frc.team1389.robot;
+package com.team1389.robot;
 
 import com.team1389.hardware.inputs.hardware.GyroHardware;
 import com.team1389.hardware.inputs.hardware.PDPHardware;

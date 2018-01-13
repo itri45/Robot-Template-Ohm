@@ -1,4 +1,4 @@
-package org.usfirst.frc.team1389.robot;
+package com.team1389.robot;
 
 import com.team1389.hardware.registry.port_types.CAN;
 import com.team1389.hardware.registry.port_types.DIO;

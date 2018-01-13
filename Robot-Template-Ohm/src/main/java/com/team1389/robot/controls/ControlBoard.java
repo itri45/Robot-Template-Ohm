@@ -1,4 +1,4 @@
-package org.usfirst.frc.team1389.robot.controls;
+package com.team1389.robot.controls;
 
 import com.team1389.hardware.inputs.hardware.JoystickHardware;
 import com.team1389.hardware.inputs.software.DigitalIn;

@@ -1,9 +1,8 @@
-package org.usfirst.frc.team1389.watchers;
-
-import org.usfirst.frc.team1389.autonomous.AutonModeSelector;
-import org.usfirst.frc.team1389.autonomous.AutonOption;
+package com.team1389.watchers;
 
 import com.team1389.auto.AutoModeBase;
+import com.team1389.autonomous.AutonModeSelector;
+import com.team1389.autonomous.AutonOption;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;

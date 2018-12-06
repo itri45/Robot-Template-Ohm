@@ -19,8 +19,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class Robot extends IterativeRobot
-{
+public class Robot extends IterativeRobot {
 	RobotSoftware robot;
 	TeleopMain teleOperator;
 	AutoModeExecuter autoModeExecuter;
@@ -28,12 +27,11 @@ public class Robot extends IterativeRobot
 	Registry registry;
 
 	/**
-	 * This function is run when the robot is first started up and should be
-	 * used for any initialization code.
+	 * This function is run when the robot is first started up and should be used
+	 * for any initialization code.
 	 */
 	@Override
-	public void robotInit()
-	{
+	public void robotInit() {
 		registry = new Registry();
 		robot = RobotSoftware.getInstance();
 		teleOperator = new TeleopMain(robot);
@@ -44,8 +42,7 @@ public class Robot extends IterativeRobot
 	}
 
 	@Override
-	public void autonomousInit()
-	{
+	public void autonomousInit() {
 
 		autoModeExecuter.stop();
 		AutoModeBase selectedAutonMode = DashboardInput.getInstance().getSelectedAutonMode();
@@ -54,8 +51,7 @@ public class Robot extends IterativeRobot
 	}
 
 	@Override
-	public void teleopInit()
-	{
+	public void teleopInit() {
 		autoModeExecuter.stop();
 
 		teleOperator.init();
@@ -65,14 +61,11 @@ public class Robot extends IterativeRobot
 	 * This function is called periodically during operator control
 	 */
 	@Override
-	public void teleopPeriodic()
-	{
+	public void teleopPeriodic() {
 		teleOperator.periodic();
-		talon.getVelocityControl(new PIDConstants(1, 0, 0)).set(500);
 	}
 
 	@Override
-	public void disabledInit()
-	{
+	public void disabledInit() {
 	}
 }
